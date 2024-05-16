@@ -19,6 +19,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 }
 ?>
+    
+<?php
+session_start();
+session_unset();
+session_destroy();
+setcookie("login", "", time() - 3600, "/");
+header('Location: login.php');
+?>
+
 
 <!DOCTYPE html>
 <html lang="en">
